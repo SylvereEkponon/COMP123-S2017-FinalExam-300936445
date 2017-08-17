@@ -12,13 +12,22 @@ using System.Windows.Forms;
  * Student ID: 300936445
  * Date: August 17, 2017
  * Description: Pick Highest Card
- * version: 0.1 - Created SplashFormTimer Tick event
+ * version: 0.2 - Started SpashForm first
  */
 
 namespace COMP123_S2017_FinalExam_300936445
 {
     public partial class SplashForm : Form
     {
+
+        //PUBLIC PROPERTIES
+        public PickHighestCardForm PickHighestCardform
+        {
+            get
+            {
+                return Program.PickHighestCardform;
+            }
+        }
         public SplashForm()
         {
             InitializeComponent();
@@ -31,7 +40,7 @@ namespace COMP123_S2017_FinalExam_300936445
         /// <param name="e"></param>
         private void SpashFormTimer_Tick(object sender, EventArgs e)
         {
-            this.PickHighestCardForm.Show();
+            this.PickHighestCardform.Show();
             this.Hide();
 
             SpashFormTimer.Enabled = false;

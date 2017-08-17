@@ -10,12 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-/*
- * Name:
- * Date:
- * StudentID:
- * Description:
- * Version:
+/*Name: Sylvere Ekponon
+ * Student ID: 300936445
+ * Date: August 17, 2017
+ * Description: Pick Highest Card
+ * version: 0.1 - Added a _scoreboard private instance variable and a linked ScoreBoard public property
  */
 
 namespace COMP123_S2017_FinalExam_300936445
@@ -29,6 +28,7 @@ namespace COMP123_S2017_FinalExam_300936445
         Deck _deck;
         Hand _hand;
         int _maximumPoints;
+        private ScoreBoard _scoreboard;
 
         // PUBLIC PROPERTIES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         public List<PictureBox> DealtCardPictureBoxList
@@ -109,6 +109,18 @@ namespace COMP123_S2017_FinalExam_300936445
             set
             {
                 this._maximumPoints = value;
+            }
+        }
+
+        public ScoreBoard ScoreBoard
+        {
+            get
+            {
+                return this._scoreboard;
+            }
+            set
+            {
+                this._scoreboard = ScoreBoard;
             }
         }
 

@@ -24,6 +24,8 @@ namespace COMP123_S2017_FinalExam_300936445
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+
             Application.Run(new PickHighestCardForm());
         }
     }

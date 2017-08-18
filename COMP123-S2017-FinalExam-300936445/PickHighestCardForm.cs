@@ -14,7 +14,7 @@ using System.Windows.Forms;
  * Student ID: 300936445
  * Date: August 17, 2017
  * Description: Pick Highest Card
- * version: 0.1 - Added a _scoreboard private instance variable and a linked ScoreBoard public property
+ * version: 0.1 - Refactored the PickHighestCardForm class
  */
 
 namespace COMP123_S2017_FinalExam_300936445
@@ -211,6 +211,8 @@ namespace COMP123_S2017_FinalExam_300936445
             this._enableDealtCards();
             this._hideFinalScore();
             UserMessageTextBox.Text = "Click the Deal Button!";
+            this.ScoreBoard.Score = 0;
+            this.ScoreBoard.Time = 30;
         }
 
         /// <summary>
@@ -234,6 +236,7 @@ namespace COMP123_S2017_FinalExam_300936445
         private void PickHighestCardForm_Load(object sender, EventArgs e)
         {
             // Initialize ScoreBoard HERE
+            this.ScoreBoard = new ScoreBoard(ScoreTextBox, TimeTextBox, FinalScoreTextBox);
 
             // Initialize the App Sounds
             this._buildDealtCardPictureBoxList();
@@ -284,7 +287,7 @@ namespace COMP123_S2017_FinalExam_300936445
                 this.CurrentClickedCard.BackColor = Color.Green;
                 UserMessageTextBox.Text = "You Got It!";
 
-                //Uncomment this --> ScoreBoard.Score += this.MaximumPoints;
+                ScoreBoard.Score += this.MaximumPoints;
 
                 DealButton.Enabled = true;
             }
@@ -370,7 +373,7 @@ namespace COMP123_S2017_FinalExam_300936445
         /// <param name="e"></param>
         private void CountDownTimer_Tick(object sender, EventArgs e)
         {
-            /* Uncomment THIS
+            
             ScoreBoard.UpdateTime();
             if (ScoreBoard.Time == 0)
             {
@@ -379,7 +382,7 @@ namespace COMP123_S2017_FinalExam_300936445
                 this._disableDealtCards();
                 this._showFinalScore();
             }
-            */
+            
         }
 
         /// <summary>

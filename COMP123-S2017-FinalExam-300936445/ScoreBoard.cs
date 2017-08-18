@@ -76,6 +76,7 @@ namespace COMP123_S2017_FinalExam_300936445
             set
             {
                 this._time = value;
+                TimeTexBox.Text = this._time.ToString();
             }
         }
 
@@ -88,7 +89,7 @@ namespace COMP123_S2017_FinalExam_300936445
             set
             {
                 this._timeTextBox = value;
-                TimeTexBox.Text = this._time.ToString();
+                
             }
         }
 

@@ -14,7 +14,7 @@ using System.Windows.Forms;
  * Student ID: 300936445
  * Date: August 17, 2017
  * Description: Pick Highest Card
- * version: 0.1 - Refactored the PickHighestCardForm class
+ * version: 0.3 - Fixed bug in the PickHighestCardForm class
  */
 
 namespace COMP123_S2017_FinalExam_300936445
@@ -120,7 +120,7 @@ namespace COMP123_S2017_FinalExam_300936445
             }
             set
             {
-                this._scoreboard = ScoreBoard;
+                this._scoreboard = value;
             }
         }
 
@@ -211,8 +211,8 @@ namespace COMP123_S2017_FinalExam_300936445
             this._enableDealtCards();
             this._hideFinalScore();
             UserMessageTextBox.Text = "Click the Deal Button!";
-            this.ScoreBoard.Score = 0;
-            this.ScoreBoard.Time = 30;
+            ScoreBoard.Score = 0;
+            ScoreBoard.Time = 30;
         }
 
         /// <summary>

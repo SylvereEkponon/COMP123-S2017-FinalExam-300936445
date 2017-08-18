@@ -9,7 +9,7 @@ using System.Windows.Forms;
  * Student ID: 300936445
  * Date: August 17, 2017
  * Description: Pick Highest Card
- * version: 0.2 - Added a constructor to the ScoreBoard class 
+ * version: 0.3 - Fixed bugs in the ScoreBoard class 
  */
 namespace COMP123_S2017_FinalExam_300936445
 {
@@ -37,7 +37,7 @@ namespace COMP123_S2017_FinalExam_300936445
 
             set
             {
-                this._finalScoreTextBox.Text = this._score.ToString();
+                this._finalScoreTextBox = value;
             }
             
         }
@@ -50,6 +50,8 @@ namespace COMP123_S2017_FinalExam_300936445
             set
             {
                 this._score = value;
+                ScoreTextBox.Text = this._score.ToString();
+                FinalScoreTextBox.Text = this._score.ToString();
             }
         }
         public TextBox ScoreTextBox
@@ -61,7 +63,7 @@ namespace COMP123_S2017_FinalExam_300936445
 
             set
             {
-                this._scoreTextBox.Text = Convert.ToString(this._score);
+                this._scoreTextBox = value;
             }
         }
 
@@ -85,7 +87,8 @@ namespace COMP123_S2017_FinalExam_300936445
             }
             set
             {
-                this._timeTextBox.Text = Convert.ToString(this._time);
+                this._timeTextBox = value;
+                TimeTexBox.Text = this._time.ToString();
             }
         }
 

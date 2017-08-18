@@ -9,13 +9,13 @@ using System.Windows.Forms;
  * Student ID: 300936445
  * Date: August 17, 2017
  * Description: Pick Highest Card
- * version: 0.1 - Created the ScoreBoard class 
+ * version: 0.2 - Added a constructor to the ScoreBoard class 
  */
 namespace COMP123_S2017_FinalExam_300936445
 {
 
 
-    class ScoreBoard
+    public class ScoreBoard
     {
 
         //PRIVATE VARIABLE INSTANCES
@@ -88,6 +88,15 @@ namespace COMP123_S2017_FinalExam_300936445
                 this._timeTextBox.Text = Convert.ToString(this._time);
             }
         }
+
+        //CONSTRUCTORS
+        public ScoreBoard(TextBox scoreTextBox, TextBox timeTexBox, TextBox finalScoreTextBox)
+        {
+            this.ScoreTextBox = scoreTextBox;
+            this.TimeTexBox = timeTexBox;
+            this.FinalScoreTextBox = finalScoreTextBox;
+        }
+
         /// <summary>
         /// This method convert the current value of the TimeTextBox.Text property to an integer
         /// </summary>

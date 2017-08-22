@@ -14,7 +14,7 @@ using System.Windows.Forms;
  * Student ID: 300936445
  * Date: August 17, 2017
  * Description: Pick Highest Card
- * version: 0.3 - Fixed bug in the PickHighestCardForm class
+ * version: 0.4 - Added the sounds for dealing and flipping cards
  */
 
 namespace COMP123_S2017_FinalExam_300936445
@@ -29,6 +29,7 @@ namespace COMP123_S2017_FinalExam_300936445
         Hand _hand;
         int _maximumPoints;
         private ScoreBoard _scoreboard;
+        private SoundPlayer _player;
 
         // PUBLIC PROPERTIES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         public List<PictureBox> DealtCardPictureBoxList
@@ -144,6 +145,8 @@ namespace COMP123_S2017_FinalExam_300936445
             UserMessageTextBox.Text = "Pick the Highest Card";
             DealButton.Enabled = false;
             this.MaximumPoints = 100;
+            this._player = new SoundPlayer(@"C:\Users\e_syl\OneDrive\Documents\Visual Studio 2017\Projects\COMP_123\COMP123-S2017-FinalExam-300936445\COMP123-S2017-FinalExam-300936445\Resources\carddeal.wav");
+            this._player.Play();
         }
 
         /// <summary>
@@ -313,6 +316,16 @@ namespace COMP123_S2017_FinalExam_300936445
             this.CurrentClickedCard = CardPictureBox;
             this.CardFlipTimer.Enabled = true;
             this._showUserMessage();
+            this._soundFlipCard();
+        }
+
+        /// <summary>
+        /// This methods make a sound for flipping cards
+        /// </summary>
+        private void _soundFlipCard()
+        {
+            SoundPlayer player = new SoundPlayer(@"C:\Users\e_syl\OneDrive\Documents\Visual Studio 2017\Projects\COMP_123\COMP123-S2017-FinalExam-300936445\COMP123-S2017-FinalExam-300936445\Resources\cardflip.wav");
+            player.Play();
         }
 
         /// <summary>
